@@ -8,24 +8,8 @@ const app = express();
 
 
 
-
-
-
-
-// // LOGIN
-// app.get("/login", (req, res) => {
-
-// });
-
-
-
-
-
-
-// READ
-app.get("/spreadsheet", async (req, res) => {
-
-
+// LOGIN
+app.get("/login", async (req, res) => {
     const auth = new google.auth.GoogleAuth({
         keyFile: "credentials.json",
         scopes: "https://www.googleapis.com/auth/spreadsheets",
@@ -40,18 +24,42 @@ app.get("/spreadsheet", async (req, res) => {
         auth: client
     });
 
-    const spreadsheetId = "18GtQ87v3Miuc4SuBGZIr1AlXjSm7Y7E4NoQcbch_bwQ";
+    res.send(googleSheets);
+});
 
+
+
+
+const spreadsheetId = "18GtQ87v3Miuc4SuBGZIr1AlXjSm7Y7E4NoQcbch_bwQ";
+
+
+// READ
+app.get("/spreadsheet", async (req, res) => {
+
+
+    // const auth = new google.auth.GoogleAuth({
+    //     keyFile: "credentials.json",
+    //     scopes: "https://www.googleapis.com/auth/spreadsheets",
+    // });
+
+    // // Create client instance
+    // const client = await auth.getClient();
+
+    // // Instance of Google Sheets API
+    // const googleSheets = google.sheets({
+    //     version: "v4",
+    //     auth: client
+    // });
+
+    
     // Get metadata about spreadsheet
     const metaData = await googleSheets.spreadsheets.get({
-        auth,
-
+        
         spreadsheetId,
 
     });
 
     const getRows = await googleSheets.spreadsheets.values.get({
-        auth,
         spreadsheetId,
         range: "Sheet1!A:A"
     });
