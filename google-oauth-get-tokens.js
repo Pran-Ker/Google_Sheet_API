@@ -1,7 +1,7 @@
 const fs = require('fs');
   const { google } = require('googleapis');
   
-  // Replace with the code you've got from the previous step
+  
   const code = '4/AABBCC-abcdEFGH1-aBcDeaBcDeaBcDeaBcDeaBcDeaBcDeaBcDeaBcDeaBcDeaBcDeaBcDeaBcDeaBcDeaBcDe';
   
   const credentials = JSON.parse(fs.readFileSync('google-client-secret.json', 'utf-8'));
