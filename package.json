@@ -1,0 +1,27 @@
+{
+  "name": "google_sheet_api",
+  "version": "1.0.0",
+  "description": "Google Sheet interface using node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pran-Ker/Google_Sheet_API.git"
+  },
+  "author": "Prannay Hebbar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pran-Ker/Google_Sheet_API/issues"
+  },
+  "homepage": "https://github.com/Pran-Ker/Google_Sheet_API#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "googleapis": "^100.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
